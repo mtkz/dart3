@@ -1,6 +1,15 @@
 //* Records, a new type that lets you aggregate multiple values of different types in a single function return.
 //* Patterns, a new category of grammar that lets you match and destructure values.
 
+//* Pattern Matching
+
+//* Pattern matching is a powerful feature that checks if a given variable
+//* or object matches a specific pattern or structure.
+//* It’s a prevalent feature in functional programming languages
+//* like F#, Haskell, Rust, and Scala. You can use it to destructure complex data types, perform conditional execution, and write more readable and intuitive code.
+//* It enhances control flow and allows programmers to write cleaner,
+//* more efficient code with less error handling.
+
 void main() {
   //? ---------- example 1 ---------- //
   // var (d, [e, f]) = ('str', [1, 'string']);
@@ -33,6 +42,18 @@ void main() {
   // final Foo(:one) = myFoo;
   // print('one $one');
 
+  //? ---------- example 5.5 ---------- //
+
+  // final characters = [
+  //   Character(name: 'Komi', gender: 'girl'),
+  //   Character(name: 'Tadano', gender: 'boy'),
+  //   Character(name: 'Yamai', gender: 'girl'),
+  // ];
+
+  // for (final Character(:name, :gender) in characters) {
+  //   print('$name is a $gender.');
+  // }
+
   //? ---------- example 6 ---------- //
   // List<(int, String)> list = [(1, 'mohammad'), (2, 'tahourian')];
   // print(list[0]);
@@ -42,7 +63,7 @@ void main() {
   //* We can pattern match on records. This powerful feature allows us to
   //* destructure complex data types and perform conditional execution.
   //* We can use the when keyword to specify a guard clause.
-  //* This Boolean expression must be true for the case to match.
+  //*  This Boolean expression must be true for the case to match.
 
   //? ---------- example : when : guard clause. ---------- //
 
@@ -75,6 +96,22 @@ void main() {
   //       ),
   //     ),
   //   );
+
+  //? ---------- example : if-case  ---------- //
+
+  //* If-case clauses, a new conditional construct that matches a value against
+  //* a pattern and executes the then or else branch,
+  //* depending on whether the pattern matches.
+
+  // final json = {
+  //   'character': ['Komi', 16,123]
+  // };
+
+  // if (json case {'character': [String name, int age , int number]}) {
+  //   print('$name is $age years old and number is $number.'); // Komi is 16 years old.
+  // } else {
+  //   throw 'corrupted JSON';
+  // }
 }
 
 // class Foo {
@@ -85,6 +122,13 @@ void main() {
 //     required this.one,
 //     required this.two,
 //   });
+// }
+
+// class Character {
+//   final String name;
+//   final String gender;
+
+//   const Character({required this.name, required this.gender});
 // }
 
 //* examples:
