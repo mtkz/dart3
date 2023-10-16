@@ -36,6 +36,39 @@ void main() {
   //? ---------- example 6 ---------- //
   // List<(int, String)> list = [(1, 'mohammad'), (2, 'tahourian')];
   // print(list[0]);
+
+  //? ---------- example : when : guard clause. ---------- //
+
+  // (int a, int b) returnMulti() => (1, 4);
+
+  // var numbers = returnMulti();
+  // var dayNumber = switch (numbers) {
+  //   (int a, int b) when a == 1 && b == 2 => 'One and Two',
+  //   (_, _) => 'nothing',
+  // };
+  // print(dayNumber);
+
+
+  //? ---------- example : when  ---------- //
+  // void main() => runApp(
+  //     MaterialApp(
+  //       debugShowCheckedModeBanner: false,
+  //       home: Scaffold(
+  //         body: Center(
+  //           child: FutureBuilder(
+  //             future: Future<String>.delayed(
+  //                 const Duration(seconds: 3), () => 'Hello World!'),
+  //             builder: (context, snapshot) => switch (snapshot) {
+  //               (AsyncSnapshot s) when s.hasData => Text(s.data!),
+  //               (AsyncSnapshot s) when !s.hasError =>
+  //                 const CircularProgressIndicator.adaptive(),
+  //               (_) => const Text('Error'),
+  //             },
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
 }
 
 // class Foo {
@@ -48,7 +81,6 @@ void main() {
 //   });
 // }
 
-
-//* examples: 
+//* examples:
 //* https://dart.dev/language/patterns
 //* https://dart.dev/language/records
