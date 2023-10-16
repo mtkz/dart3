@@ -37,6 +37,13 @@ void main() {
   // List<(int, String)> list = [(1, 'mohammad'), (2, 'tahourian')];
   // print(list[0]);
 
+  //* Dart 3 also introduces records.
+  //* Put simply, functions and expressions can return more than one value at a time.
+  //* We can pattern match on records. This powerful feature allows us to
+  //* destructure complex data types and perform conditional execution.
+  //* We can use the when keyword to specify a guard clause.
+  //* This Boolean expression must be true for the case to match.
+
   //? ---------- example : when : guard clause. ---------- //
 
   // (int a, int b) returnMulti() => (1, 4);
@@ -47,7 +54,6 @@ void main() {
   //   (_, _) => 'nothing',
   // };
   // print(dayNumber);
-
 
   //? ---------- example : when  ---------- //
   // void main() => runApp(
