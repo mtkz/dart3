@@ -1,20 +1,18 @@
 void main() {
   //? ---------- example 1 ---------- //
-  // var (d, [e, f]) = ('str', [1, 2]);
+  // var (d, [e, f]) = ('str', [1, 'string']);
 
   // print(d);
 
   //? ---------- example 2 ---------- //
   // var numList = [1, 2, 3];
-  // //* List pattern [a, b, c] destructures the three elements from numList...
   // var [a, b, c] = numList;
-  // //* ...and assigns them to new variables.
   // print(a + b + c);
 
   //? ---------- example 3 ---------- //
   // var (h, j) = ('left', 'right');
 
-  //swap
+  // // swap
   // (h, j) = (j, h);
 
   // print(h);
@@ -26,4 +24,19 @@ void main() {
 
   // final user = getUser();
 
+  //? ---------- example 5 ---------- //
+  // final Foo myFoo = Foo(one: 'one', two: 2);
+
+  // final Foo(:one) = myFoo;
+  // print('one $one');
 }
+
+// class Foo {
+//   final String one;
+//   final int two;
+
+//   Foo({
+//     required this.one,
+//     required this.two,
+//   });
+// }
