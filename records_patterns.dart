@@ -1,3 +1,6 @@
+//* Records, a new type that lets you aggregate multiple values of different types in a single function return.
+//* Patterns, a new category of grammar that lets you match and destructure values.
+
 void main() {
   //? ---------- example 1 ---------- //
   // var (d, [e, f]) = ('str', [1, 'string']);
@@ -29,6 +32,10 @@ void main() {
 
   // final Foo(:one) = myFoo;
   // print('one $one');
+
+  //? ---------- example 6 ---------- //
+  // List<(int, String)> list = [(1, 'mohammad'), (2, 'tahourian')];
+  // print(list[0]);
 }
 
 // class Foo {
@@ -40,3 +47,8 @@ void main() {
 //     required this.two,
 //   });
 // }
+
+
+//* examples: 
+//* https://dart.dev/language/patterns
+//* https://dart.dev/language/records
