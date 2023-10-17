@@ -1,39 +1,38 @@
-void main() {
-  Circle circle = Circle();
-  Square square = Square();
+//? Sealed types (another new Dart 3 feature) and enums are especially
+//? useful for switches because the compiler knows their possible values
+//? ahead of time, even without a default case.
+//? Applying the sealed modifier to a class enables exhaustiveness
+//? checking when switching over its subclasses.
+//? If we add a new subclass to a sealed class,
+//? the switch expression will be incomplete. Exhaustiveness checking helps flag this.
 
-  double circleArea = shapeHandler(circle);
-  double squareArea = shapeHandler(square);
+import 'dart:math';
 
-  print("Circle area: $circleArea");
-  print("Square area: $squareArea");
+sealed class Shape {}
+
+class Square extends Shape {
+  Square(this.length, this.width);
+  final double length;
+  final double width;
 }
 
-sealed class Shape {
-  double area();
+class Circle extends Shape {
+  Circle(this.radius);
+  final double radius;
 }
 
-class Circle implements Shape {
-  
-
-  @override
-  double area() {
-    return 1;
-  }
-}
-
-class Square implements Shape {
-  @override
-  double area() {
-    return 2;
-  }
-}
-
-double shapeHandler(Shape shape) => switch (shape) {
-      Circle() => 1,
-      Square() => 2,
+double calculateArea(Shape shape) => switch (shape) {
+      Square(length: var l, width: var w) => l * w,
+      Circle(radius: var r) => pi * r * r,
     };
 
+void main() {
+  Shape shape = Square(3, 3);
+  print(calculateArea(shape));
+  shape = Circle(3);
+  print(calculateArea(shape));
+}
 
-//* examples: 
+//* examples:
 //* https://medium.com/@aliammariraq/sealed-classes-in-flutter-unlocking-powerful-features-b73ab5838ca0
+//* https://medium.com/@aliammariraq/sealed-classes-in-dart-unlocking-powerful-features-d8dba185925f
