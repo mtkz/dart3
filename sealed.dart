@@ -9,7 +9,11 @@
 
 //? To create a known, enumerable set of subtypes, use the sealed modifier. This allows you to create a switch over those subtypes that is statically ensured to be exhaustive.
 
-//? In Dart 3, the keyword used to define a sealed class is sealed. Like in other programming languages, a sealed class in Dart is a class that cannot be inherited by other classes outside its declaration. This means that subclasses of the sealed class must be declared in the same file.
+//? In Dart 3, the keyword used to define a
+//? sealed class is sealed. Like in other programming languages,
+//? a sealed class in Dart is a class that cannot be inherited by other classes 
+//? outside its declaration. This means that subclasses of the sealed class
+//? must be declared in the same file.
 
 //? Sealed classes in Dart are often used in combination with switch expressions. The switch structure can exhaustively use the subclasses of a sealed class, ensuring that all possible cases are handled.
 
